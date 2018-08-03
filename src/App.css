@@ -1,28 +1,44 @@
 .App {
+  height:100vh;
+  width:100vw;
   text-align: center;
 }
+.buttons{
+  display:flex;
+  justify-content: center;
+  height:50%;
+  width:100%;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.storebtn{
+  height:50px;
+  width:100px;
+  border-radius:50% 10% 10% 50%;
+  outline:none;
 }
-
-.App-title {
-  font-size: 1.5em;
+.cartbtn{
+  height:50px;
+  width:100px;
+  border-radius:10% 50% 50% 10%;
+  outline:none;
 }
-
-.App-intro {
-  font-size: large;
+.main{
+  display:flex;
+  flex-direction: column;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.everyting{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items:center;
+  margin:auto;
+}
+.productButtons{
+  width:100%;
+}
+.items{
+  width:30%;
+}
+.productContainer{
+  width:30%;
 }
