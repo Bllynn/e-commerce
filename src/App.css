@@ -25,13 +25,19 @@
 .main{
   display:flex;
   flex-direction: column;
+  align-items:center;
+  height:100vh;
+  width:100%;
 }
-.everyting{
+.everything{
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items:center;
   margin:auto;
+  height:800px;
+  width:90%;
+  overflow:scroll;
 }
 .productButtons{
   width:100%;
@@ -40,5 +46,5 @@
   width:30%;
 }
 .productContainer{
-  width:30%;
+  width:25%;
 }

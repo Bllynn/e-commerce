@@ -9,13 +9,8 @@ class Product extends Component{
 
     handleAdd=()=>{
         const {id} = this.props
-console.log(this.props)
-        axios.post('/api/cart',{id}).then((res)=>{
-            swal({
-              title:'Added to cart',
-              icon:'success',
-              button:'Keep shopping',
-            });
+            axios.post('/api/cart',{id}).then(()=>{
+            
         })
     }
     render(){

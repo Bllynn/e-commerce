@@ -18,12 +18,13 @@ massive(CONNECTION_STRING).then(db=>{
 
 
 
-
-
-app.delete('/api/cart/:id',ctrl.deleteItem)
-
+app.delete('/api/product/:id',ctrl.deleteProduct)
+app.put('/api/delete/',ctrl.deleteItem)
+app.put('/api/cart', ctrl.addToCart)
 app.get('/api/products', ctrl.getProducts)
+app.get('/api/cart',ctrl.getCart)
 app.post('/api/cart', ctrl.addToCart)
+app.get('/api/details', ctrl.cartDetails)
 
 
 
