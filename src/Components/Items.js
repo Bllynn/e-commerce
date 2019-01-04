@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getTotal} from '../dux/reducer';
-import swal from 'sweetalert';
+
 
 
 
@@ -11,7 +11,7 @@ class Items extends Component{
     handleAddItem=()=>{
         const {id}=this.props
             axios.put('/api/cart',{id}).then((res)=>{
-            // console.log(res.data)
+            console.log(res.data)
             this.props.getTotal(res.data)
             })
     }

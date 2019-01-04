@@ -33,7 +33,8 @@ module.exports={
         try{
             let {id} = req.body
             const db = req.app.get('db')
-                 let item = await db.delete_Item([id])
+                 let item = await db.delete_Item([+req.session.userid, id])
+                 console.log(item)
                  if(item[0].quantity<=0){
                     let checkedItem = await db.delete_Product([id])
                     return res.status(200).send(checkedItem)

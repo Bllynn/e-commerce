@@ -1,6 +1,7 @@
-delete from cart 
-where product_id = $1;
-SELECT cart.product_id, cart.quantity, products.product_name, products.product_image, products.product_price
+DELETE from cart 
+WHERE product_id = $1 AND user_id = $2;
+SELECT cart.product_id, cart.quantity, wizard_products.product_name, wizard_products.product_image, wizard_products.product_price
 FROM cart
-LEFT OUTER JOIN products
-ON cart.product_id = products.id;
+WHERE
+LEFT OUTER JOIN wizard_products
+ON cart.product_id = wizard_products.id;

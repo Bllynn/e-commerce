@@ -1,5 +1,5 @@
-update cart
-set quantity = quantity - 1
-where product_id = $1;
-select * from cart
-where product_id=$1
+UPDATE cart
+SET quantity = quantity - 1
+WHERE user_id = $1 AND product_id = $2;
+SELECT * from cart
+WHERE product_id=$2;

@@ -14,20 +14,21 @@ class Cart extends Component{
             this.props.getCart(items.data)
         })
         axios.get('/api/details').then(cart =>{
+            console.log(cart.data)
             this.props.getTotal(cart.data)
         })
     }
-    hopefulFunction(data){
-        const total = [];
-        data.map((e,i)=>{
-           let cartTotal = (Number(e.product_price.replace(/[$]+/g, '')*e.quantity)).toFixed(2);
-           total.push(cartTotal)
-           const sum = total.reduce((total,amount) => Number(total) + Number(amount));
-           return(
-               sum
-           );
-        }
-        )}
+    // hopefulFunction(data){
+    //     const total = [];
+    //     data.map((e,i)=>{
+    //        let cartTotal = (Number(e.product_price.replace(/[$]+/g, '')*e.quantity)).toFixed(2);
+    //        total.push(cartTotal)
+    //        const sum = total.reduce((total,amount) => Number(total) + Number(amount));
+    //        return(
+    //            sum
+    //        );
+    //     }
+    //     )}
     render(){
         
         const total = [];
@@ -60,7 +61,7 @@ class Cart extends Component{
                   <div className='everything'>
                   {items}
                     </div>
-                    <h1>Total:${this.hopefulFunction(this.props.total)}</h1>
+                    <h1>Total:${total.reduce((total,amount) => Number(total) + Number(amount),0).toFixed(2)}</h1>
                     
                   <Link to='/Store'><button className='btn btn-primary'>STORE</button></Link>
                 </div>
